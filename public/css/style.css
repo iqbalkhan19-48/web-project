@@ -1,0 +1,486 @@
+/* Basic Biolar plate */
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.52%;
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Roboto", sans-serif;
+}
+/*____________________________________    Common code of website   __________________________________ */
+a {
+  text-decoration: none;
+}
+li {
+  list-style: none;
+}
+.container {
+  max-width: 1192px;
+  width: 90%;
+  margin: 0 auto;
+}
+span {
+  color: crimson;
+  font-size: 3.5rem;
+}
+.underline {
+  border-bottom: 3px solid crimson;
+  max-width: 80px;
+  width: 90%;
+  margin: 0 auto;
+}
+.main-heading {
+  text-transform: capitalize;
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 3rem;
+  text-align: center;
+}
+/*________________________________________ nav section__________________________________________ */
+
+.header-section {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../images/header.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+.nav-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 2rem 3rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.nav-content.stricky {
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 2222;
+}
+.nav-list {
+  display: flex;
+  align-items: center;
+}
+.nav-items {
+  margin-left: 2rem;
+}
+.nav-links {
+  text-transform: capitalize;
+  font-size: 2.1rem;
+  letter-spacing: 1px;
+  font-weight: 500;
+  color: #ffffff;
+  transition: all 0.3s;
+
+}
+.nav-links:hover {
+  color: crimson;
+  border-bottom: 2px solid crimson;
+}
+.nav-links.activ {
+  color: crimson;
+}
+.brand-logo {
+  font-size: 3rem;
+  font-weight: 600;
+  color: #ffffff;
+  text-transform: capitalize;
+}
+.brand-logo span {
+  font-size: 2rem;
+}
+/* hamberger */
+.hamberger {
+  cursor: pointer;
+  display: none;
+
+}
+.bar-1,
+.bar-2,
+.bar-3 {
+  width: 25px;
+  height: 2px;
+  background-color: #fff;
+  margin: 0.6rem 0rem;
+}
+.bar-2 {
+  width: 35px;
+}
+/*____________________________________   header center content   ______________________________ */
+.header-center {
+  text-align: center;
+}
+.header-center-content {
+  max-width: 90%;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.header-primaery__heading {
+  font-size: 4rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #fff;
+}
+.header-detail {
+  text-align: center;
+  color: rgb(228, 228, 228);
+  max-width: 600px;
+  width: 100%;
+  font-size: 1.3rem;
+  letter-spacing: 2px;
+  line-height: 150%;
+  margin: 0.5rem 0rem 3rem 0rem;
+}
+.header-btn {
+  color: #fff;
+  background-color: crimson;
+  border: 1px solid crimson;
+  padding: 0.7rem 2rem;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.7s;
+}
+.header-btn:hover {
+  letter-spacing: 6px;
+}
+
+/*___________________________________     About us section    ________________________________ */
+.about-us__content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-rows: auto;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1rem 0rem 3rem 0rem;
+  grid-gap: 2rem;
+}
+.right-side-content img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+}
+.left-side-content .left-side__main-heading {
+  text-transform: uppercase;
+  font-size: 2.4rem;
+  letter-spacing: 1px;
+}
+.left-side-content .left-side__secondry-heading {
+  font-size: 1.5rem;
+  color: rgb(43, 43, 43);
+  letter-spacing: 1px;
+  line-height: 140%;
+  margin-top: 2rem;
+}
+
+/*________________________        Menu section        ____________________________ */
+.menu-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-rows: auto;
+  justify-content: center;
+  grid-gap: 2rem;
+  padding: 2rem 0rem 4rem 0rem;
+}
+.single-card {
+  overflow: hidden;
+  position: relative;
+  background: #fff;
+  box-shadow: 1px 2px 8px 2px #dcdde1;
+}
+.single-card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  overflow: hidden;
+  padding: 0.5rem;
+  transition: all 1s;
+}
+.single-card img:hover {
+  transform: scale(1.1);
+}
+.img-content {
+  text-align: center;
+  display: block;
+}
+.product-name {
+  letter-spacing: 1px;
+  font-size: 1.5rem;
+  text-transform: capitalize;
+}
+.product-detail {
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  text-align: left;
+  margin: 1rem;
+}
+.product-price {
+  margin: 1.2rem 0rem;
+  font-size: 1.5rem;
+  position: absolute;
+  top: -3%;
+  left: 0;
+  background: crimson;
+  border-radius: 50%;
+  padding: 1.4rem 1rem;
+  color: #fff;
+}
+.img-content .product-btn {
+  color: #ffffff;
+  background: crimson;
+  padding: 0.9rem 0rem;
+  display: block;
+  text-transform: capitalize;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+/*________________________________________      Kitchen Expert      _____________________________  */
+.bacImage {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url(../images/kitchen.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding: 3.5rem 0rem;
+  width: 100%;
+  height: auto;
+}
+.expert-detail {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-rows: auto;
+  padding: 4rem 0rem;
+  justify-content: center;
+  grid-gap: 20px;
+  align-items: center;
+}
+.single-expert-detail {
+  overflow: hidden;
+  position: relative;
+}
+.single-expert-detail img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  cursor: pointer;
+}
+.about-expert {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.5s;
+}
+.single-expert-detail:hover img {
+  opacity: 0.5;
+}
+.exper-name {
+  color: #fff;
+  font-size: 2rem;
+  text-transform: capitalize;
+}
+.exper-experience {
+  font-size: 1.4rem;
+  color: whitesmoke;
+}
+
+/*_____________________________     testimonila section     ______________________________  */
+.testimonial {
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url(../images/6.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  padding: 3rem 0rem;
+  width: 100%;
+}
+.testimonila-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-rows: auto;
+  grid-gap: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+.singe-testimonial {
+  text-align: center;
+  color: #ffffffff;
+  background: rgba(0, 0, 0, 0.7);
+}
+.testimonial-image img {
+  width: 80px;
+  height: auto;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-top: -2.2rem;
+}
+.customer-view-detail {
+  padding: 5rem 1rem;
+  letter-spacing: 1px;
+  line-height: 144%;
+  font-size: 1.2rem;
+}
+.customer-name {
+  text-transform: capitalize;
+  font-size: 1.6rem;
+  color: crimson;
+  text-decoration: none;
+}
+/*________________________  contact us page ___________________________ */
+.contect {
+  background: url(../images/header.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  padding: 3rem 0rem;
+}
+.contact-us__content {
+  display: flex;
+  justify-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.lef-side__content-form {
+  padding: 2rem 4rem;
+  background-color: whitesmoke;
+}
+.contact-heading {
+  color: crimson;
+  text-align: center;
+  font-size: 2.3rem;
+}
+.inputbox {
+  position: relative;
+  display: block;
+  width: 100%;
+  margin: 1rem;
+}
+.inputbox input,
+.inputbox input textarea {
+  outline: none;
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.5rem;
+  color: #111;
+  border: 1px solid #555;
+  resize: none;
+}
+.form-btn {
+  text-align: center;
+}
+.form-btn-clr {
+  color: #fff;
+  background: crimson;
+  padding: 0.6rem 3rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  outline: brown;
+  border: none;
+  transition: all 0.5s;
+}
+.form-btn-clr:hover {
+  letter-spacing: 6px;
+}
+@media (max-width: 1025px) {
+  .header-primaery__heading {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 850px) {
+  html {
+    font-size: 55.52%;
+  }
+}
+@media (max-width: 740px) {
+  .nav-list {
+    display: none;
+  }
+  .nav-content {
+    justify-content: space-between;
+  }
+  .header-primaery__heading {
+    font-size: 2.5rem;
+  }
+  .hamberger {
+    display: block;
+  }
+  .show {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    position: fixed;
+    top: 10%;
+    right: 0;
+    background: black;
+    width: 50%;
+    height: 100vh;
+    padding-top: 2rem;
+  }
+  .nav-items {
+    margin-top: 3rem;
+  }
+}
+@media (max-width: 660px) {
+  .header-primaery__heading {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 568px) {
+  .header-primaery__heading {
+    font-size: 1.8rem;
+    font-weight: 600;
+    letter-spacing: 0px;
+  }
+  .header-detail {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    line-height: 135%;
+    margin: 0.5rem 0rem 3rem 0rem;
+  }
+  .singe-testimonial {
+    margin: 2rem;
+  }
+  .left-side-content .left-side__main-heading {
+    text-align: center;
+  }
+  .customer-view-detail {
+    padding: 5rem 3rem;
+    letter-spacing: 1px;
+    line-height: 144%;
+    font-size: 1.4rem;
+    font-weight: 700;
+  }
+}
+@media (max-width: 397px) {
+  .header-primaery__heading {
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+  }
+  .header-detail {
+    font-size: 1.3rem;
+    letter-spacing: 2px;
+    line-height: 145%;
+    margin: 1rem 0rem 3rem 0rem;
+  }
+  .main-heading {
+    text-transform: capitalize;
+    font-size: 2.5rem;
+    font-weight: 600;
+  }
+}
